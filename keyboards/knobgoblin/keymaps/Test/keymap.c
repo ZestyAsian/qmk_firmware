@@ -21,28 +21,28 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 	//Numpad
 	[0] = LAYOUT_ortho(
-                  KC_NUMLOCK, 	KC_PSLS, 	KC_PAST, KC_PMNS,
-                  KC_P7,  	KC_P8,   	KC_P9,   KC_PPLS,
-                  KC_P4,  	KC_P5,   	KC_P6,   KC_PPLS,
-         KC_MPLY, KC_P1,  	KC_P2,   	KC_P3,   KC_PENT,
-         KC_MUTE, KC_P0,  	KC_P0,   	KC_PDOT, KC_PENT
+                  KC_NUMLOCK, 	KC_PSLS, 	KC_PAST, 	KC_PMNS,
+                  KC_P7,  	KC_P8,   	KC_P9,   	KC_PPLS,
+                  KC_P4,  	KC_P5,   	KC_P6,   	KC_PPLS,
+         KC_MPLY, KC_P1,  	KC_P2,   	KC_P3,   	KC_PENT,
+         KC_MUTE, KC_P0,  	KC_P0,   	KC_PDOT, 	KC_PENT
 				 ),
 
 	//Microstation macros
 	[1] = LAYOUT_ortho(
-	          KC_NO, 	MSTOP, 		KC_NO, 	KC_NO,
-                  MSISO,  	MSBACK,   	KC_NO,  KC_NO,
-                  MSLEFT,  	MSTOP,   	MSRIGHT,KC_NO,
-         TEST, 	  KC_NO,  	MSFRONT,   	KC_NO,  KC_ENT,
-         KC_MUTE, MSFIT,  	MSFIT,   	KC_NO, 	KC_ENT
+	          KC_ESC, 	KC_NO, 		KC_NO, 		KC_NO,
+                  MSISO,  	MSBACK,   	KC_NO,  	KC_NO,
+                  MSLEFT,  	MSTOP,   	MSRIGHT,	KC_NO,
+         TEST, 	  KC_NO,  	MSFRONT,   	MSBOT,  	KC_ENT,
+         KC_MUTE, MSFIT,  	MSFIT,   	KC_NO, 		KC_ENT
 				 ),
 				 
 	[2] = LAYOUT_ortho(
-	          KC_B, 	KC_B, 		KC_B, 	KC_B,
-                  KC_B,  	KC_B,   	KC_B,   KC_B,
-                  KC_B,  	KC_B,   	KC_B,   KC_B,
-         TEST, 	  KC_B,  	KC_B,   	KC_B,   KC_B,
-         KC_MUTE, KC_B,  	KC_B,   	KC_B, 	KC_B
+	          KC_B, 	KC_B, 		KC_B, 		KC_B,
+                  KC_B,  	KC_B,   	KC_B,   	KC_B,
+                  KC_B,  	KC_B,   	KC_B,   	KC_B,
+         TEST, 	  KC_B,  	KC_B,   	KC_B,   	KC_B,
+         KC_MUTE, KC_B,  	KC_B,   	KC_B, 		KC_B
 				 ),
 				 
 	[3] = LAYOUT_ortho(
@@ -68,7 +68,7 @@ uint8_t selected_layer = 0;
 void encoder_update_user(uint8_t index, bool clockwise) {
 
 			if (index == 1) { /* Bottom encoder */
-				if (!clockwise) {
+				if (clockwise) {
 					tap_code(KC_VOLU);
 				} else {
 					tap_code(KC_VOLD);
