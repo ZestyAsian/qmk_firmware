@@ -1,0 +1,4 @@
+cd ~/qmk_firmware
+git checkout master
+git fetch upstream
+git pull upstream master
