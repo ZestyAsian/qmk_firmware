@@ -16,18 +16,24 @@
 
 #include "knobgoblin.h"
 
-#ifdef ENCODER_ENABLE
+
+/* Commented out to enable custom encoder updates in keymap.c file
+ * REMEMBER TO RE-ADD OPENING AND CLOSING COMMENT SYMBOLS TO BELOW IF STATEMENTS. I DO NOT KNOW HOW TO NEST COMMENT SYMBOLS
+*/
 /* assign keycodes to the encoder rotation */
+
+/*#ifdef ENCODER_ENABLE
+
 __attribute__((weak)) void encoder_update_user(uint8_t index, bool clockwise) {
 
-			if (index == 1) { /* Bottom encoder */
+			if (index == 1) { Bottom encoder 
 				if (clockwise) {
 					tap_code(KC_VOLU);
 				} else {
 					tap_code(KC_VOLD);
 				}
 			}
-			if (index == 0) { /* Top encoder */
+			if (index == 0) {  Top encoder \
 				if (clockwise) {
 					tap_code(KC_MNXT);
 				} else {
@@ -36,6 +42,7 @@ __attribute__((weak)) void encoder_update_user(uint8_t index, bool clockwise) {
 			}
 }
 #endif
+*/
 
 #ifdef OLED_DRIVER_ENABLE
 /* rotate screen for proper orentation*/
